@@ -1,0 +1,182 @@
+@import url(https://fonts.google.com/specimen/Figtree);
+
+/* @font-face {
+  font-family: "MyCustomFont";
+  src: url("./assets/fonts/Figtree-Italic-VariableFont_wght.ttf"),
+    url("./assets/fonts/Figtree-VariableFont_wght.ttf");
+} */
+
+:root {
+  --crl-Primary-Yellow: hsl(47, 88%, 63%);
+  --crl-white: hsl(0, 0%, 100%);
+  --crl-secondary-grey-light: hsl(0, 0%, 42%);
+  --crl-secondary-grey-dark: hsl(0, 0%, 7%);
+  --border-radius: 2rem;
+  --font-weight-solid: 800;
+  --font-weight-light: 600;
+}
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Figtree", sans-serif;
+  background-color: var(--crl-Primary-Yellow);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.card {
+  background-color: var(--crl-white);
+  width: clamp(32.7rem, 80vw, 38.4rem);
+  height: clamp(50.01rem, 60vh, 52.2rem);
+  border-radius: var(--border-radius);
+  border-style: solid;
+  border-width: 0.1rem 1rem 1rem 0.1rem;
+  border-color: black;
+  transition: box-shadow 0.2s ease-in;
+}
+
+.card:hover {
+  box-shadow: 1rem 0.5rem 0.5rem var(--crl-secondary-grey-dark);
+}
+
+.card_container {
+  width: clamp(27.9rem, 90%, 33.6rem);
+  height: auto;
+  border-radius: var(--border-radius);
+  margin: 1rem auto;
+  overflow: hidden;
+}
+.card_container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+a,
+a:focus,
+a:hover {
+  text-decoration: none;
+}
+
+.main {
+  width: clamp(2.9rem, 90%, 33.6rem);
+  height: auto;
+  margin: 1rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: start;
+}
+
+.main div {
+  padding: 1rem 0;
+}
+.main a {
+  cursor: pointer;
+  color: var(--crl-secondary-grey-dark);
+  background-color: var(--crl-secondary-grey-dark);
+  padding: 0.8rem 1rem;
+  border-radius: 0.4rem;
+  font-weight: var(--font-weight-solid);
+  font-size: clamp(1.4rem, 3vw, 1.5rem);
+  transition: color 0.2s ease;
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+}
+
+.main a:hover,
+.main a:focus {
+  color: var(--crl-white);
+  z-index: 2;
+}
+
+.main a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border: 2px solid transparent;
+  border-radius: 0.4rem;
+  background-color: var(--crl-Primary-Yellow);
+  z-index: -1;
+  transition: border 0.2s ease;
+}
+
+.main a:hover::after,
+.main a:focus::after {
+  z-index: -2;
+  border: 2px solid var(--crl-secondary-grey-dark);
+}
+
+.main h1 {
+  color: var(--crl-Primary-Yellow);
+  font-weight: var(--font-weight-solid);
+  font-size: clamp(2rem, 4vw, 2.1rem);
+}
+
+.main p {
+  font-weight: var(--font-weight-light);
+  font-size: clamp(1.3rem, 3vw, 1.5rem);
+}
+.main p:nth-child(2) {
+  color: var(--crl-secondary-grey-dark);
+}
+.main p:last-child {
+  color: var(--crl-secondary-grey-light);
+}
+
+span {
+  display: block;
+}
+
+figure {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  width: fit-content;
+  margin: 2rem 0 0 2rem;
+}
+
+figure img {
+  width: 4rem;
+  display: block;
+}
+figcaption {
+  font-weight: var(--font-weight-solid);
+  font-size: clamp(1.4rem, 3vw, 1.5rem);
+}
+
+.footer {
+  color: var(--crl-secondary-grey-dark);
+  font-size: clamp(1.1rem, 3vw, 1.5rem);
+}
+
+.footer a {
+  color: var(--crl-secondary-grey-light);
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.footer a:hover {
+  color: var(--crl-white);
+}
